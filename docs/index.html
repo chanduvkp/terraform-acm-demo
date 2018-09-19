@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Private Terraform Enterprise Lab</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link REL="stylesheet" TYPE="text/css" HREF="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="link.js"></script>
+  </head>
+  <body>
+    <textarea id="source">
+name: Easy SSL management with ACM
+class: center,middle,title-slide
+count: false
+![:scale 40%](images/Terraform_VerticalLogo_FullColor.png)
+.titletext[
+Easy SSL management with ACM]
+Automatic SSL provsioning and management  
+with Terraform and Amazon Certificate Manager
+
+???
+My name is Sean Carolan and I'm a Solutions Engineer with HashiCorp. I like building things. In my past life I was a Linux system administrator, now I travel and help users get started with Infrastructure as Code.
+
+During this presentation we'll show you how easy it is to manage and renew your SSL certificates with Terraform and Amazon Certificate Manager.
+
+---
+name: SSL-is-Hard
+SSL Management is Hard!
+-------------------------
+.center[
+![:scale 100%](images/verisign-expiration.png)
+]
+
+Even large security organizations sometimes forget to renew their SSL certificates.
+
+???
+There are several reasons SSL management is hard.  Who here has to create or install SSL certificates in your organization?  What is that process like?  
+
+1.  Create a CSR using cryptic code
+2.  Send CSR off to an SSL certificate authority with some $$$
+3.  Verify your identity to the SSL CA
+4.  Receive a certificate and key
+5.  Install the cert and key on your server or load Balancer
+6.  Don't forget to renew!  You now have to do this every year.
+
+---
+name: What-is-ACM
+What is Amazon Certificate Manager?
+-------------------------
+.center[
+![:scale 40%](images/hqdefault.jpg)
+]
+
+AWS Certificate Manager is a service that lets you easily provision, manage, and deploy public and private Secure Sockets Layer/Transport Layer Security (SSL/TLS) certificates for use with AWS services and your internal connected resources.
+
+???
+https://aws.amazon.com/certificate-manager/
+
+AWS Certificate Manager is a service that lets you easily provision, manage, and deploy public and private Secure Sockets Layer/Transport Layer Security (SSL/TLS) certificates for use with AWS services and your internal connected resources. SSL/TLS certificates are used to secure network communications and establish the identity of websites over the Internet as well as resources on private networks. AWS Certificate Manager removes the time-consuming manual process of purchasing, uploading, and renewing SSL/TLS certificates. With AWS Certificate Manager, you can quickly request a certificate, deploy it on ACM-integrated AWS resources, such as Elastic Load Balancers, Amazon CloudFront distributions, and APIs on API Gateway, and let AWS Certificate Manager handle certificate renewals. It also enables you to create private certificates for your internal resources and manage the certificate lifecycle centrally. Public and private certificates provisioned through AWS Certificate Manager for use with ACM-integrated services are free. You pay only for the AWS resources you create to run your application. For private certificates, you pay monthly for the operation of the private CA and for the private certificates you issue.
+
+---
+name: What-is-Terraform
+What is Terraform?
+-------------------------
+
+![:scale 100%](./images/tf_aws_instance.png)
+
+.contents[
+* Infrastructure as Code
+* Executable Documentation
+* Human and machine readable
+* Easy to learn
+* Test, share, re-use, automate
+* Works on all major cloud providers
+]
+
+???
+Terraform is the DNA of your infrastructure.
+
+---
+name: Live-Demo
+class: center,middle
+Live Demo
+=========================
+???
+
+
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js" type="text/javascript"></script>
+    <script src="./remark_settings.js" type="text/javascript"></script>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+# You can use any AMI here as long as it runs something on port 80 (http)
+demoami = "ami-05349ec17a04c40fb"
+ecommerce_servers = "1"
+subdomain = "www"
+domainname = "spacelyspacesprockets.info"
+key_name = "scarolan"
+region = "us-west-2"
+subnet0 = "subnet-8ddab7d7"
+subnet1 = "subnet-82992cc9"
+subnet2 = "subnet-8ddab7d7"
+vpc_id = "vpc-5dd7ff24"
