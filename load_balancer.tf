@@ -71,18 +71,18 @@ resource "aws_lb_listener" "http_listener" {
 }
 
 # Create a listener on port 443
-# resource "aws_lb_listener" "https_listener" {
-#   load_balancer_arn = "${aws_lb.ecom_lb.arn}"
-#   port              = "443"
-#   protocol          = "HTTPS"
-#   # This is configured in certificate.tf
-#   certificate_arn   = "${aws_acm_certificate_validation.cert.certificate_arn}"
+resource "aws_lb_listener" "https_listener" {
+  load_balancer_arn = "${aws_lb.ecom_lb.arn}"
+  port              = "443"
+  protocol          = "HTTPS"
+  # This is configured in certificate.tf
+  certificate_arn   = "${aws_acm_certificate_validation.cert.certificate_arn}"
 
-#   default_action {
-#     target_group_arn = "${aws_lb_target_group.ecom_tg.arn}"
-#     type             = "forward"
-#   }
-# }
+  default_action {
+    target_group_arn = "${aws_lb_target_group.ecom_tg.arn}"
+    type             = "forward"
+  }
+}
 
 # Attach our instances to the target group
 resource "aws_lb_target_group_attachment" "ecom_tg_server" {
